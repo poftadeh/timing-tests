@@ -1,0 +1,192 @@
+/* 
+====================================
+GENERAL
+==================================== 
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body, #app {
+  height: 100%;
+  font-size: 10px;
+}
+
+body {
+  background-color: #3498db;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 
+====================================
+MAIN
+==================================== 
+*/
+
+.hidden {
+  display: none;
+}
+
+.main-content, .crm-window {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.left-menu h1 {
+  font-size: 3rem;
+  text-align: left;
+}
+
+.left-menu {
+  flex: 0 0 20%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  background-color: #2c3e50;
+}
+
+.results-box {
+  flex: 0 0 80%;
+  background-color: #3498db;
+}
+
+/* 
+====================================
+LOGIN
+==================================== 
+*/
+
+.login-window {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2c3e50;
+  height: 25rem;
+  width: 45rem;
+  border-radius: 4rem;
+}
+
+.login-greeting {
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+
+.login-input {
+  margin: 0.2rem 0;
+  font-size: 2rem;
+}
+
+.login-button {
+  font-size: 2.2rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  border: none;
+  padding: .5rem;
+  outline: none;
+  padding: 1rem;
+  color: #ecf0f1;
+  background-color: #27ae60;
+}
+
+.login-button:hover {
+  background-color: #2ecc71;
+}
+
+/* 
+====================================
+AVATAR
+==================================== 
+*/
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem 0;
+}
+
+.avatar-image {
+  width: 13rem;
+  height: 13rem;
+  background-color: red;
+  border-radius: 8rem;
+  align-self: center;
+}
+
+.welcome-text {
+  padding-top: 1rem;
+  font-style: italic;
+  font-size: 2rem;
+  text-align: center;
+}
+/* 
+====================================
+SEARCH
+==================================== 
+*/
+
+.search-container {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.box  {
+  width: 70rem;
+  height: 80rem;
+  background-color: #2c3e50;
+  border: 1px solid #ecf0f1;
+}
+.container {
+  display: flex;
+  margin: 11rem 0 32rem 0;
+  justify-content: center;
+}
+
+/* 
+====================================
+RESULTS
+==================================== 
+*/
+
+.result-container {
+  background-color: #34495e;
+  height: 100rem;
+  width: 130rem;
+  margin: 5rem auto;
+}
+
+.result-table {
+  display: grid;
+  font-size: 3rem;
+  padding-top: .5rem;
+  grid-template-rows: 5% 32% 32% 32%;
+  grid-template-columns: 4% 32% 32% 32%;
+}
+
+.grid-header {
+  border-top: .2rem solid #7f8c8d;
+  border-bottom: .2rem solid #7f8c8d;
+}
+
+.grid-item {
+  display: grid;
+  justify-content: center;
+}

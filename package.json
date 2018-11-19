@@ -1,0 +1,46 @@
+{
+  "name": "timing-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "feather-icons": "^4.9.0",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.3.11",
+    "popper.js": "^1.14.5",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-svg-loader": "^2.1.0",
+    "webpack": "^4.25.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "^1.0.1",
+    "live-server": "^1.2.0",
+    "nodemon": "^1.18.6",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "serve": "nodemon server.js",
+    "build": "webpack",
+    "babel": "babel ./components/Index.js -o ./public/bundle.js --presets=env,react"
+  },
+  "author": "Pouya Oftadeh",
+  "license": "ISC"
+}
