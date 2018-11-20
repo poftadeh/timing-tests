@@ -24,9 +24,9 @@ class Service {
     })
   }
 
-  getMember(name) {
+  getMember(lastName) {
     return axios.post(`${API_URL}/find`, {
-      name: name,
+      lastName: lastName,
     })
       .catch(err => console.error(err));
   }

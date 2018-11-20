@@ -11,25 +11,31 @@ class OSTEPCRM extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
+      data: [],
       hasLoggedIn: false,
       username: "User",
+      view: "overview",
     }
 
     this.setData = this.setData.bind(this);
     this.setUsername = this.setUsername.bind(this);
     this.getAllMembers = this.getAllMembers.bind(this);
     this.setLogin = this.setLogin.bind(this);
+    this.setView = this.setView.bind(this);
   }
 
   componentDidMount() {
-    this.getAllMembers()
+    this.getAllMembers();
   }
 
   getAllMembers() {
     service.getAllMembers().then(members =>
       this.setState({ data: members })
     );
+  }
+
+  setView(view) {
+    this.setState({ view });
   }
 
   setData(data) {
@@ -41,7 +47,7 @@ class OSTEPCRM extends React.Component {
   }
 
   setUsername(username) {
-    this.setState({username});
+    this.setState({ username });
   }
 
   render() {
@@ -52,9 +58,12 @@ class OSTEPCRM extends React.Component {
             <LeftMenu
               setData={this.setData}
               username={this.state.username}
+              setLogin={this.setLogin}
+              setView={this.setView}
             />
             <div className="results-box">
               <Result
+                view={this.state.view}
                 data={this.state.data}
               />
             </div>

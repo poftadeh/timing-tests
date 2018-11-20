@@ -8,9 +8,9 @@ const Member = require('../../models/Member.js');
 // @desc Get all Members
 // @access Public
 
-router.get('/', (req,res) => {
+router.get('/', (req, res) => {
   Member.find()
-    .sort({firstName: 1})
+    .sort({ lastName: 1 })
     .then(members => res.json(members));
 });
 
@@ -18,7 +18,7 @@ router.get('/', (req,res) => {
 // @desc Add a Member via POST
 // @access Public
 
-router.post('/add', (req,res) => {
+router.post('/add', (req, res) => {
   console.log(req.body);
   const newMember = new Member({
     firstName: req.body.firstName,
@@ -33,9 +33,10 @@ router.post('/add', (req,res) => {
 // @desc Find member
 // @access Public
 
-router.post('/find', (req,res) => {
-  Member.find(req.body)
-    .sort({name: 1})
+router.post('/find', (req, res) => {
+  console.log("Lastname:", req.body.lastName)
+  Member.find({ lastName: new RegExp(req.body.lastName) })
+    .sort({ lastName: 1 })
     .then(member => res.json(member));
 });
 

@@ -10,28 +10,36 @@ class Search extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeView = this.changeView.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+  }
+
+  changeView() {
+    this.props.setView('table');
+  }
+
+  handleKeyUp(e) {
+    console.log(e.keyCode, e.target.value)
+    if (e.keyCode === 13) this.handleSubmit();
   }
 
   handleChange(event) {
-    console.log(event, event.target, event.target.value)
+    this.changeView();
     this.setState({ name: event.target.value });
-    console.log(this.state);
   }
 
   handleSubmit(event) {
-    console.log("in handlesubmit");
+    this.changeView();
     if (!this.state.name) {
       service.getAllMembers()
         .then(members => {
           this.props.setData(members);
-          console.log(members);
         })
         .catch(err => console.error(err));
     } else {
       service.getMember(this.state.name)
         .then(member => {
-          this.props.setData(member);
-          console.log(member.data);
+          this.props.setData(member.data);
         })
     }
     event.preventDefault();
@@ -40,17 +48,21 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-container">
+        <h2 className="section-header">Contacts</h2>
         <input
           type="text"
           onChange={this.handleChange}
           value={this.state.name}
-          className="search-box"
+          className="search-input"
           placeholder="Search Name"
+          onClick={this.changeView}
+          onKeyUp={this.handleKeyUp}
         />
         <input
           type="submit"
+          className="search-input crm-button"
           onClick={this.handleSubmit}
-          value="Fetch"
+          value="Find Contact"
         />
       </div>
     );

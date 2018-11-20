@@ -1,24 +1,30 @@
 import React from 'react';
+import Chart from './Chart';
+import Table from './Table';
+import Overview from './Overview';
 
 class Result extends React.Component {
+  componentDidUpdate() {
+    console.log('props in result:', this.props.data)
+  }
+
+  format() {
+    if (this.props.view === "projections") {
+      console.log("charr")
+      return <Chart />;
+    } else if (this.props.view === "table") {
+      return <Table data={this.props.data} />;
+    } else if (this.props.view === "overview") {
+      return <Overview />;
+    } else {
+      return <p>No data selected.</p>
+    }
+  }
+
   render() {
     return (
       <div className="result-container">
-        <div className="result-table">
-          <div className="grid-item grid-header">#</div>
-          <div className="grid-item grid-header">First</div>
-          <div className="grid-item grid-header">Last</div>
-          <div className="grid-item grid-header">Email</div>
-          {this.props.data.map && this.props.data.map((member, i) => (
-            <div key={member._id}>
-              <div className="grid-item">{i + 1}</div>
-              <div className="grid-item">{member.firstName}</div>
-              <div className="grid-item">{member.lastName}</div>
-              <div className="grid-item">{member.email}</div>
-            </div>
-          ))}
-        </div>
-
+        {this.format()}
       </div>
     );
   }
