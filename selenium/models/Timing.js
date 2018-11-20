@@ -6,16 +6,15 @@ const TimingSchema = new Schema({
     type: String,
     required: true
   },
-  duration: {
+  duration: {  // in seconds
     type: String,
     required: true
   },
   dateRecorded: {
     type: String,
   },
-  memoryUsage: {
+  memoryUsage: {  // in MBs
     type: String,
-    required: true
   }
 });
 

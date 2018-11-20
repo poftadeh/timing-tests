@@ -1,7 +1,8 @@
+const Timing = require('./models/Timing');
+
 class Test {
   constructor(testName) {
     this.testName = testName;
-    this.start();
   }
 
   start() {
@@ -14,8 +15,22 @@ class Test {
     console.log(`Test '${this.testName}' ended in ${(this.endTime - this.startTime) / 1000} seconds.`)
   }
 
-  uploadToDatabase(model, mongoURI) {
-    
+  calculateRamUsage() {
+    const used = process.memoryUsage().heapUsed / 1024 / 1024;
+    return Math.round(used * 100) / 100;
+  }
+
+  uploadToDatabase() {
+    const newTiming= new Timing({
+      testName: this.testName,
+      duration: (this.endTime - this.startTime) / 1000,
+      dateRecorded: new Date(Date.now()).toLocaleDateString(),
+      memoryUsage: this.calculateRamUsage()
+    });
+  
+    newTiming.save()
+      .then(result => console.log(result))
+      .catch(error => console.error("Error uploading: ", error))
   }
 }
 
