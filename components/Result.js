@@ -10,7 +10,6 @@ class Result extends React.Component {
 
   format() {
     if (this.props.view === "projections") {
-      console.log("charr")
       return <Chart />;
     } else if (this.props.view === "table") {
       return <Table data={this.props.data} />;
