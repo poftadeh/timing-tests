@@ -2,7 +2,6 @@ import React from 'react';
 import Search from './Search';
 import Avatar from './Avatar';
 import CalendarImage from './assets/calendar.svg';
-import Calendar from 'react-calendar';
 import Projections from './Projections';
 import Account from './Account';
 import OverviewMenu from './OverviewMenu';
@@ -28,7 +27,6 @@ export default class LeftMenu extends React.Component {
         <Account
           setLogin={this.props.setLogin}
         />
-        <Calendar className="calendar"/>
       </div>
     );
   }

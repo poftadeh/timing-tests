@@ -3,9 +3,10 @@ const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver');
 const Test = require('./Test');
 const mongoose = require('mongoose');
-const database = 'mongodb://poftadeh:foobar322@ds159993.mlab.com:59993/timing'
+const database = require('../config/keys').mongoURI;
 const driver = new Builder().forBrowser('chrome').build();
-const CRM_URL = 'http://localhost:8080';
+const PORT = require('../config/port');
+const CRM_URL = `http://localhost:${PORT}`;
 
 const sleep = async (seconds) => {
   return new Promise((resolve, reject) => setTimeout(() => resolve(), seconds * 1000))
@@ -48,7 +49,7 @@ testContactSearch = async () => {
   await searchInput.sendKeys('Leonard');
   const findContactButton = await driver.findElement(By.css('input[value="Find Contact"'));
   await findContactButton.click();
-  await sleep(1);
+  await sleep(2);
   test.end();
   test.uploadToDatabase();
 }
@@ -62,4 +63,5 @@ const conductTests = async () => {
 
 conductTests()
   .then(() => driver.quit())
+  .then(() => mongoose.connection.close())
   .catch(error => console.error("Error:", error));

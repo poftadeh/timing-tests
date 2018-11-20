@@ -57,8 +57,8 @@ export default class Overview extends React.Component {
             tickTimeDisplayFormat={'%d %m'}
             interpolate={'cardinal'}
             areaColors={['#3498db', '#ecf0f1']}
-            width={1150}
-            height={550}
+            width={800}
+            height={275}
             data={[
               [
                 { x: '1-Jan-15', y: 20 },

@@ -12,7 +12,7 @@ GENERAL
 
 html {
   height: 100%;
-  font-size: 10px;
+  font-size: 9.1px;
 }
 
 body,
@@ -92,6 +92,7 @@ MAIN
 
 .calendar {
   margin-top: 2rem;
+  width: 3rem;
 }
 
 /* 
@@ -107,7 +108,7 @@ OVERVIEW
 }
 
 .pie-container {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .pie-title {
@@ -230,17 +231,6 @@ SEARCH
   padding: 0.3rem;
 }
 
-/* .box  {
-  width: 70rem;
-  height: 80rem;
-  background-color: #2c3e50;
-  border: 1px solid #ecf0f1;
-}
-.container {
-  display: flex;
-  margin: 11rem 0 32rem 0;
-  justify-content: center;
-} */
 
 /* 
 ====================================
@@ -250,8 +240,8 @@ RESULTS
 
 .result-container {
   background-color: #34495e;
-  height: 100rem;
-  width: 130rem;
+  height: 95rem;
+  width: 125rem;
   margin: 5rem auto;
   overflow: auto;
 }
@@ -259,6 +249,7 @@ RESULTS
 .result-table {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .grid-header {
@@ -295,8 +286,49 @@ CHART
   height: 100%;
   justify-content: center;
   align-items: center;
+  background-image: url('../components/assets/chart.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .chart {
   transform: scale(1.1);
 }
+
+/*
+======================================
+RESPONSIVE DESIGN
+======================================
+*/
+
+@media only screen and (max-width: 1450px) {
+  html {
+    font-size: 7.7px;
+  }
+ 
+  .result-container {
+    height: 90rem;
+    width: 120rem;
+  }
+
+  .pie-container {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  html {
+    font-size: 6.4px;
+  }
+ 
+  .result-container {
+    height: 105rem;
+    width: 140rem;
+  }
+
+  .pie-container {
+    padding: 2rem;
+  }
+}
+
+

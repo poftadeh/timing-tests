@@ -1,7 +1,7 @@
 {
   "name": "timing-tests",
   "version": "1.0.0",
-  "description": "Testing JSDOM Against a (fake) CRM",
+  "description": "Timing automated UI events against a test CRM",
   "main": "server.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -14,7 +14,6 @@
     "mongoose": "^5.3.11",
     "npm": "^6.4.1",
     "react": "^16.6.1",
-    "react-calendar": "^2.17.5",
     "react-dom": "^16.6.1",
     "react-easy-chart": "^1.0.0",
     "react-svg-loader": "^2.1.0",
@@ -37,8 +36,9 @@
     "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
+    "start": "npm run-script build && npm run-script serve",
     "test": "node ./selenium/logger.js",
-    "start": "webpack-dev-server",
+    "webpack-server": "webpack-dev-server",
     "serve": "nodemon server.js",
     "build": "webpack",
     "babel": "babel ./components/Index.js -o ./public/bundle.js --presets=env,react"
