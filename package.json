@@ -10,6 +10,7 @@
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "file-loader": "^2.0.0",
+    "geckodriver": "^1.14.1",
     "image-webpack-loader": "^4.5.0",
     "mongoose": "^5.3.11",
     "npm": "^6.4.1",

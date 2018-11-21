@@ -1,9 +1,11 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
+const firefox = require('selenium-webdriver/firefox');
 const chromedriver = require('chromedriver');
+const geckodriver = require('geckodriver');
 const Test = require('./Test');
 const faker = require('faker');
-const driver = new Builder().forBrowser('chrome').build();
+const driver = new Builder().forBrowser('firefox').build();
 const PORT = require('../config/port');
 const CRM_URL = `http://localhost:${PORT}`;
 
