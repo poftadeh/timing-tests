@@ -37,8 +37,7 @@ const type = async (field, text) => {
 }
 
 const testContactSearch = async () => {
-  const test = new Test("contactSearch");
-  test.start();
+  await sleep(3);
   const searchInput = await driver.findElement(By.css('.search-input'));
   const findContactButton = await driver.findElement(By.css('input[value="Find Contact"'));
   await findContactButton.click();
