@@ -40,9 +40,10 @@ const testContactSearch = async () => {
   const test = new Test("contactSearch");
   test.start();
   const searchInput = await driver.findElement(By.css('.search-input'));
-  await sleep(2);
-  await type(searchInput, faker.name.findName());
   const findContactButton = await driver.findElement(By.css('input[value="Find Contact"'));
+  await findContactButton.click();
+  await sleep(3);
+  await type(searchInput, faker.name.findName());
   await findContactButton.click();
   await sleep(2);
 }
@@ -50,6 +51,12 @@ const testContactSearch = async () => {
 const clickProjections = async () => {
   const projectionButton = await driver.findElement(By.css('#projections'));
   await projectionButton.click();
+  await sleep(4);
+}
+
+const clickStats = async () => {
+  const statsButton = await driver.findElement(By.css('#stats'));
+  await statsButton.click();
   await sleep(3);
 }
 
@@ -63,6 +70,7 @@ const conductTests = async () => {
   await testLogin();
   await testContactSearch();
   await clickProjections();
+  await clickStats();
   await logout();
 }
 

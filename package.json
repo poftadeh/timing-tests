@@ -40,6 +40,7 @@
     "test": "node ./selenium/logger.js",
     "webpack-server": "webpack-dev-server",
     "serve": "nodemon server.js",
+    "demo": "node ./selenium/demo.js",
     "build": "webpack",
     "babel": "babel ./components/Index.js -o ./public/bundle.js --presets=env,react"
   },
