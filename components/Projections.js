@@ -16,6 +16,7 @@ export default class Projections extends React.Component {
         <h2 className="section-header">Projections</h2>
         <button 
           className="crm-button"
+          id="projections"
           onClick={this.setView}
         >
           View

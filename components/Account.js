@@ -16,6 +16,7 @@ export default class Account extends React.Component {
         <h2 className="section-header">Account</h2>
         <button 
           className="crm-button"
+          id="logout"
           onClick={this.logOut}
         >
           Log Out
